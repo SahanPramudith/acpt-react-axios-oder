@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import axios from "axios";
+import {Button} from "@mui/material";
 
 export default function Axios() {
     useEffect(() => {
@@ -20,12 +21,28 @@ export default function Axios() {
                 // always executed
             });
     }
+    
+    const Post = () => {
+        axios.post('https://jsonplaceholder.typicode.com/posts', {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    
     return(
         <div>
             <h1>
                 Axios
-
             </h1>
+            <br/>
+            <Button onClick={()=>Post()} variant="contained">Contained</Button>
         </div>
     )
 }
