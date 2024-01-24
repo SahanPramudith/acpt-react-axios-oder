@@ -134,42 +134,26 @@ export default function App() {
                 {/*        </ListItemButton>*/}
                 {/*    </ListItem>*/}
                 {/*))}*/}
-                <NavLink to={'/dashbord'}>
-                    <ListItem key={'dashbord'} disablePadding sx={{display: 'block'}}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
+                {routs.map((val,idex)=>(
+                    <NavLink to={val.path}>
+                        <ListItem key={'dashbord'} disablePadding sx={{display: 'block'}}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center',
+                                    minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5,
                                 }}
                             >
-                                <MailIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={"dashbord"} sx={{opacity: open ? 1 : 0}}/>
-                        </ListItemButton>
-                    </ListItem>
-                </NavLink>
-                <NavLink to={'/user'}>
-                    <ListItem key={'User'} disablePadding sx={{display: 'block'}}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center',
-                                }}
-                            >
-                                <InboxIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={'User'} sx={{opacity: open ? 1 : 0}}/>
-                        </ListItemButton>
-                    </ListItem>
-                </NavLink>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center',
+                                    }}
+                                >
+                                    <MailIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary={val.name} sx={{opacity: open ? 1 : 0}}/>
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
+                ))}
             </List>
             <Divider/>
         </Drawer>
