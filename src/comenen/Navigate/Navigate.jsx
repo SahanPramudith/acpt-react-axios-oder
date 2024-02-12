@@ -1,6 +1,6 @@
 import Dashbord from "../../Pagees/Dashbord/Dashbord.jsx";
 import User from "../../Pagees/User/User.jsx";
-import Axios from "../../Pagees/Axios/Axios.jsx";
+import Studen from "../../Pagees/Sutdent/Studen.jsx";
 
 const routs = [
     {
@@ -15,11 +15,12 @@ const routs = [
         component: <User/>,
         key: 'user'
     },
+    
     {
-        name: 'axios',
-        path: '/axios',
-        component: <Axios/>,
-        key: 'axios'
+        name: 'student',
+        path: '/student',
+        component: <Studen/>,
+        key: 'student'
     },
 ]
 export default routs;
